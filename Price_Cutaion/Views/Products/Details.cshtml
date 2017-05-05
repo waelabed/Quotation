@@ -1,0 +1,47 @@
+﻿@model Price_Cutaion.Models.ProductVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductVM</h4>
+    <hr />
+    <dl class="dl-horizontal panel col-md-5">
+        <dt>
+            @Html.DisplayNameFor(model => model.productName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productUrlImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productUrlImg)
+        </dd>
+
+    </dl>
+    <div class="col-lg-pull-11">
+
+        <img alt="@Model.productName" src="~/Images/Products/@Model.productUrlImg" style="height:200px;width:400px;column-fill:unset" />
+
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.producId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

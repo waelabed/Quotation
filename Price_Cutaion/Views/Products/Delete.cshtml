@@ -1,0 +1,54 @@
+﻿@model Price_Cutaion.Models.ProductVM
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div class=panel col-md-5>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal panel col-md-5">
+        <dt>
+            @Html.DisplayNameFor(model => model.productName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productUrlImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productUrlImg)
+        </dd>
+
+    </dl>
+    <div class="col-lg-pull-11">
+
+        <img alt="@Model.productName" src="~/Images/Products/@Model.productUrlImg" style="height:200px;width:400px;column-fill:unset" />
+
+    </div>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+      
+    }
+</div>
